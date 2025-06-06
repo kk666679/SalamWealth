@@ -84,7 +84,7 @@ For testing purposes, you can use these demo accounts:
 
 ## Project Structure
 
-\`\`\`
+```
 SalamWealth/
 ├── app/                    # Next.js app directory
 │   ├── api/               # API routes
@@ -101,7 +101,7 @@ SalamWealth/
 │   └── supabase/         # Supabase client
 ├── public/               # Static assets
 └── styles/               # Global styles
-\`\`\`
+```
 
 ## Features in Detail
 
