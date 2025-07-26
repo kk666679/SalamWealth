@@ -136,10 +136,3 @@ SalamWealth/
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Next.js team for the amazing framework
-- Radix UI for accessible components
-- Tailwind CSS for the utility-first CSS framework
-- All contributors who have helped shape this project
