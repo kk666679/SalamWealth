@@ -70,32 +70,32 @@ graph TB
     APPS --> SHARED[shared/ - Shared Types & Utils]
 
     %% Web app structure
-    WEB --> WEB_APP[app/ - App Router]
-    WEB --> WEB_COMPONENTS[components/]
-    WEB --> WEB_LIB[lib/]
-    WEB --> WEB_STORYBOOK[Storybook (UI Dev)]
+    WEB --> WEB-APP[app/ - App Router]
+    WEB --> WEB-COMPONENTS[components/]
+    WEB --> WEB-LIB[lib/]
+    WEB --> WEB-STORYBOOK[Storybook (UI Dev)]
 
-    WEB_APP --> AUTH_ROUTES[(auth)/ - Auth Routes]
-    WEB_APP --> DASHBOARD[dashboard/ - Protected Routes]
-    WEB_APP --> API_ROUTES[api/ - Edge API Routes]
+    WEB-APP --> AUTH-ROUTES[(auth)/ - Auth Routes]
+    WEB-APP --> DASHBOARD[dashboard/ - Protected Routes]
+    WEB-APP --> API-ROUTES[api/ - Edge API Routes]
 
-    WEB_COMPONENTS --> UI_COMPONENTS[ui/ - Shadcn/ui]
-    WEB_COMPONENTS --> ANIMATIONS[animations/ - Framer Motion]
-    WEB_COMPONENTS --> DOMAIN_COMPONENTS[financing/ & investment/]
+    WEB-COMPONENTS --> UI-COMPONENTS[ui/ - Shadcn/ui]
+    WEB-COMPONENTS --> ANIMATIONS[animations/ - Framer Motion]
+    WEB-COMPONENTS --> DOMAIN-COMPONENTS[financing/ & investment/]
 
     %% API app structure
-    API --> API_SRC[src/]
-    API --> API_TEST[test/]
-    API --> API_E2E[Playwright (E2E Testing)]
+    API --> API-SRC[src/]
+    API --> API-TEST[test/]
+    API --> API-E2E[Playwright (E2E Testing)]
 
-    API_SRC --> MODULES[modules/]
-    API_SRC --> COMMON[common/]
+    API-SRC --> MODULES[modules/]
+    API-SRC --> COMMON[common/]
 
-    MODULES --> AUTH_MODULE[auth/]
-    MODULES --> USERS_MODULE[users/]
-    MODULES --> FINANCING_MODULE[financing/]
-    MODULES --> INVESTMENT_MODULE[investment/]
-    MODULES --> ZAKAT_MODULE[zakat/]
+    MODULES --> AUTH-MODULE[auth/]
+    MODULES --> USERS-MODULE[users/]
+    MODULES --> FINANCING-MODULE[financing/]
+    MODULES --> INVESTMENT-MODULE[investment/]
+    MODULES --> ZAKAT-MODULE[zakat/]
 
     COMMON --> DECORATORS[decorators/]
     COMMON --> GUARDS[guards/]
@@ -121,9 +121,9 @@ graph TB
     CONFIG --> POSTCSS[postcss.config.mjs]
 
     %% Environment Configuration
-    CONFIG --> ENV_FILES[.env* files]
-    ENV_FILES --> ENV_LOCAL[.env.local]
-    ENV_FILES --> ENV_EXAMPLE[.env.example]
+    CONFIG --> ENV-FILES[.env* files]
+    ENV-FILES --> ENV-LOCAL[.env.local]
+    ENV-FILES --> ENV-EXAMPLE[.env.example]
 
     %% Styling connections
     classDef frontend fill:#e1f5fe,stroke:#01579b,stroke-width:2px
@@ -132,11 +132,11 @@ graph TB
     classDef config fill:#fff3e0,stroke:#e65100,stroke-width:2px
     classDef tooling fill:#fce4ec,stroke:#ad1457,stroke-width:2px
 
-    class WEB,WEB_APP,WEB_COMPONENTS,WEB_LIB,UI_COMPONENTS,ANIMATIONS,DOMAIN_COMPONENTS,AUTH_ROUTES,DASHBOARD,API_ROUTES frontend
-    class API,API_SRC,API_TEST,MODULES,COMMON,AUTH_MODULE,USERS_MODULE,FINANCING_MODULE,INVESTMENT_MODULE,ZAKAT_MODULE,DECORATORS,GUARDS,INTERCEPTORS backend
+    class WEB,WEB-APP,WEB-COMPONENTS,WEB-LIB,UI-COMPONENTS,ANIMATIONS,DOMAIN-COMPONENTS,AUTH-ROUTES,DASHBOARD,API-ROUTES frontend
+    class API,API-SRC,API-TEST,MODULES,COMMON,AUTH-MODULE,USERS-MODULE,FINANCING-MODULE,INVESTMENT-MODULE,ZAKAT-MODULE,DECORATORS,GUARDS,INTERCEPTORS backend
     class SHARED,DATABASE,PRISMA,SCHEMA,MIGRATIONS,SEED,TYPES,UTILS shared
-    class TURBOREPO,DOCKER,ESLINT,TYPESCRIPT,TAILWIND,POSTCSS,ENV_FILES,ENV_LOCAL,ENV_EXAMPLE config
-    class WEB_STORYBOOK,API_E2E tooling
+    class TURBOREPO,DOCKER,ESLINT,TYPESCRIPT,TAILWIND,POSTCSS,ENV-FILES,ENV-LOCAL,ENV-EXAMPLE config
+    class WEB-STORYBOOK,API-E2E tooling
 ```
 
 ## 🌟 Suggestions (Optional Enhancements)
