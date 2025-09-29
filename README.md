@@ -73,6 +73,7 @@ graph TB
     WEB --> WEB_APP[app/ - App Router]
     WEB --> WEB_COMPONENTS[components/]
     WEB --> WEB_LIB[lib/]
+    WEB --> WEB_STORYBOOK[📚 Storybook (UI Dev)]
 
     WEB_APP --> AUTH_ROUTES[(auth)/ - Auth Routes]
     WEB_APP --> DASHBOARD[dashboard/ - Protected Routes]
@@ -85,6 +86,7 @@ graph TB
     %% API app structure
     API --> API_SRC[src/]
     API --> API_TEST[test/]
+    API --> API_E2E[🧪 Playwright (E2E Testing)]
 
     API_SRC --> MODULES[modules/]
     API_SRC --> COMMON[common/]
@@ -101,6 +103,9 @@ graph TB
 
     %% Packages section
     PACKAGES --> DATABASE[database/ - Prisma Package]
+    PACKAGES --> TYPES[@salamwealth/types]
+    PACKAGES --> UTILS[@salamwealth/utils]
+
     DATABASE --> PRISMA[prisma/]
     DATABASE --> SEED[seed.ts]
 
@@ -112,18 +117,68 @@ graph TB
     CONFIG --> DOCKER[docker-compose.yml]
     CONFIG --> ESLINT[.eslintrc.json]
     CONFIG --> TYPESCRIPT[tsconfig.json]
+    CONFIG --> TAILWIND[tailwind.config.ts]
+    CONFIG --> POSTCSS[postcss.config.mjs]
+
+    %% Environment Configuration
+    CONFIG --> ENV_FILES[.env* files]
+    ENV_FILES --> ENV_LOCAL[.env.local]
+    ENV_FILES --> ENV_EXAMPLE[.env.example]
 
     %% Styling connections
     classDef frontend fill:#e1f5fe,stroke:#01579b,stroke-width:2px
     classDef backend fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
     classDef shared fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
     classDef config fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef tooling fill:#fce4ec,stroke:#ad1457,stroke-width:2px
 
     class WEB,WEB_APP,WEB_COMPONENTS,WEB_LIB,UI_COMPONENTS,ANIMATIONS,DOMAIN_COMPONENTS,AUTH_ROUTES,DASHBOARD,API_ROUTES frontend
     class API,API_SRC,API_TEST,MODULES,COMMON,AUTH_MODULE,USERS_MODULE,FINANCING_MODULE,INVESTMENT_MODULE,ZAKAT_MODULE,DECORATORS,GUARDS,INTERCEPTORS backend
-    class SHARED,DATABASE,PRISMA,SCHEMA,MIGRATIONS,SEED shared
-    class TURBOREPO,DOCKER,ESLINT,TYPESCRIPT config
+    class SHARED,DATABASE,PRISMA,SCHEMA,MIGRATIONS,SEED,TYPES,UTILS shared
+    class TURBOREPO,DOCKER,ESLINT,TYPESCRIPT,TAILWIND,POSTCSS,ENV_FILES,ENV_LOCAL,ENV_EXAMPLE config
+    class WEB_STORYBOOK,API_E2E tooling
 ```
+
+## 🌟 Suggestions (Optional Enhancements)
+
+### 1. Tooling Information
+Consider adding these development tools to enhance the development experience:
+
+- **📚 Storybook**: For UI component development and documentation
+- **🧪 Playwright**: For end-to-end testing of critical user flows
+- **🃏 Jest**: For unit testing of utilities and business logic
+- **🎨 Tailwind CSS**: For utility-first styling (already included)
+- **📦 PostCSS**: For CSS processing and optimization (already configured)
+
+### 2. Shared Utility Packages
+As the `shared/` directory grows, consider splitting into dedicated packages:
+
+```bash
+packages/
+├── types/           # @salamwealth/types - Shared TypeScript types
+├── utils/           # @salamwealth/utils - Common utility functions
+├── ui/              # @salamwealth/ui - Reusable UI components
+└── database/        # @salamwealth/database - Prisma database package
+```
+
+### 3. Environment Configuration
+Environment variables are managed through:
+
+- **`.env.local`**: Local development (gitignored)
+- **`.env.example`**: Template for required environment variables
+- **`@nestjs/config`**: For backend configuration management
+- **`next.config.mjs`**: For frontend build-time configuration
+
+### 4. Diagram Usage
+This Mermaid diagram can be embedded in:
+- **README.md**: For contributor onboarding
+- **Architecture docs**: Internal wiki or Notion pages
+- **Onboarding guides**: New developer documentation
+
+Render using:
+- Mermaid Live Editor: https://mermaid.live
+- VS Code with Mermaid plugin
+- Obsidian with Mermaid support
 
 ## 🔧 Development Setup
 
