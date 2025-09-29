@@ -73,7 +73,7 @@ graph TB
     WEB --> WEB_APP[app/ - App Router]
     WEB --> WEB_COMPONENTS[components/]
     WEB --> WEB_LIB[lib/]
-    WEB --> WEB_STORYBOOK[📚 Storybook (UI Dev)]
+    WEB --> WEB_STORYBOOK[Storybook (UI Dev)]
 
     WEB_APP --> AUTH_ROUTES[(auth)/ - Auth Routes]
     WEB_APP --> DASHBOARD[dashboard/ - Protected Routes]
