@@ -86,7 +86,7 @@ graph TB
     %% API app structure
     API --> API_SRC[src/]
     API --> API_TEST[test/]
-    API --> API_E2E[🧪 Playwright (E2E Testing)]
+    API --> API_E2E[Playwright (E2E Testing)]
 
     API_SRC --> MODULES[modules/]
     API_SRC --> COMMON[common/]
@@ -103,8 +103,8 @@ graph TB
 
     %% Packages section
     PACKAGES --> DATABASE[database/ - Prisma Package]
-    PACKAGES --> TYPES[@salamwealth/types]
-    PACKAGES --> UTILS[@salamwealth/utils]
+    PACKAGES --> TYPES[salamwealth/types]
+    PACKAGES --> UTILS[salamwealth/utils]
 
     DATABASE --> PRISMA[prisma/]
     DATABASE --> SEED[seed.ts]
