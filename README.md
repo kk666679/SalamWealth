@@ -73,20 +73,20 @@ graph TB
     WEB --> WEB-APP[app/ - App Router]
     WEB --> WEB-COMPONENTS[components/]
     WEB --> WEB-LIB[lib/]
-    WEB --> WEB-STORYBOOK[Storybook (UI Dev)]
+    WEB --> WEB-STORYBOOK["Storybook (UI Dev)"]
 
-    WEB-APP --> AUTH-ROUTES[(auth)/ - Auth Routes]
+    WEB-APP --> AUTH-ROUTES["(auth)/ - Auth Routes"]
     WEB-APP --> DASHBOARD[dashboard/ - Protected Routes]
     WEB-APP --> API-ROUTES[api/ - Edge API Routes]
 
     WEB-COMPONENTS --> UI-COMPONENTS[ui/ - Shadcn/ui]
     WEB-COMPONENTS --> ANIMATIONS[animations/ - Framer Motion]
-    WEB-COMPONENTS --> DOMAIN-COMPONENTS[financing/ & investment/]
+    WEB-COMPONENTS --> DOMAIN-COMPONENTS["financing/ & investment/"]
 
     %% API app structure
     API --> API-SRC[src/]
     API --> API-TEST[test/]
-    API --> API-E2E[Playwright (E2E Testing)]
+    API --> API-E2E["Playwright (E2E Testing)"]
 
     API-SRC --> MODULES[modules/]
     API-SRC --> COMMON[common/]
@@ -121,7 +121,7 @@ graph TB
     CONFIG --> POSTCSS[postcss.config.mjs]
 
     %% Environment Configuration
-    CONFIG --> ENV-FILES[.env* files]
+    CONFIG --> ENV-FILES[".env* files"]
     ENV-FILES --> ENV-LOCAL[.env.local]
     ENV-FILES --> ENV-EXAMPLE[.env.example]
 
@@ -136,6 +136,7 @@ graph TB
     class API,API-SRC,API-TEST,MODULES,COMMON,AUTH-MODULE,USERS-MODULE,FINANCING-MODULE,INVESTMENT-MODULE,ZAKAT-MODULE,DECORATORS,GUARDS,INTERCEPTORS backend
     class SHARED,DATABASE,PRISMA,SCHEMA,MIGRATIONS,SEED,TYPES,UTILS shared
     class TURBOREPO,DOCKER,ESLINT,TYPESCRIPT,TAILWIND,POSTCSS,ENV-FILES,ENV-LOCAL,ENV-EXAMPLE config
+
     class WEB-STORYBOOK,API-E2E tooling
 ```
 
